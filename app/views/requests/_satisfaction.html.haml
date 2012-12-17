@@ -1,0 +1,16 @@
+= simple_form_for([:user, @request],:html=>{:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.radio_button :satisfaction, "very good"
+    Very good
+    %br
+    = f.radio_button :satisfaction, "good"
+    good
+    %br
+    = f.radio_button :satisfaction, "not satisfied"
+    not satisfied
+   
+  .form-actions
+    = f.button :submit
+

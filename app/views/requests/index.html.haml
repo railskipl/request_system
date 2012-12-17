@@ -1,0 +1,27 @@
+%h1 Listing requests
+
+%table
+  %tr
+    %th Date
+    %th Request type
+    %th Details of request
+    %th Status
+
+
+  - @requests.each do |request|
+    - if request.status == "unread"
+      %tr{:bgcolor => "FFFFCC"}
+        %td= request.created_at.strftime("%d %b. %Y")
+        %td= link_to request.request_type, user_request_path(params[:user_id],request.id) 
+        %td= request.details_of_request
+        %td= request.status
+    - else
+      %tr
+        %td= request.created_at.strftime("%d %b. %Y")
+        %td= link_to request.request_type, user_request_path(params[:user_id],request.id) 
+        %td= request.details_of_request
+        %td= request.status
+
+%br
+
+= link_to 'New Request', new_user_request_path

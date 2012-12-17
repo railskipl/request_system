@@ -1,0 +1,28 @@
+
+
+%p#notice= notice
+
+%p
+  %b Phone no:
+  = @request.phone_no
+%p
+  %b Request type:
+  = @request.request_type
+%p
+  %b Details of request:
+  = @request.details_of_request
+%p
+  %b Permission:
+  = @request.permission
+%p
+  %b Status:
+  = @request.status
+
+- if @request.status == "complete"  && (current_user.has_role? :user)
+  %p
+    %b Satisfaction:
+    = render "satisfaction"
+  
+  
+- if current_user.has_role? :admin
+  = link_to 'Edit', edit_user_request_path

@@ -1,0 +1,24 @@
+= simple_form_for([:user, @request],:html=>{:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :phone_no
+    = f.label :request_type 
+    = f.collection_select :request_type, RequestType.all(:order => "id"), :name,:name
+    = f.input :details_of_request
+    = f.label :permission 
+    = f.radio_button  :permission, "Yes"
+    Yes
+    %br
+    = f.radio_button  :permission, "No"
+    No
+    = f.hidden_field :status ,:value => "unread"
+    = f.hidden_field :user_id ,:value => params[:user_id]
+    / nested form for adding photos
+    .field
+      = f.fields_for :request_photos do |builder|
+        = render "request_photo_fields", :f => builder
+      %br/
+      %p= link_to_add_fields "+ADD", f, :request_photos
+  .form-actions
+    = f.button :submit

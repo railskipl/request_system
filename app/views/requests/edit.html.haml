@@ -1,0 +1,15 @@
+%h1 Editing request
+
+= simple_form_for([:user, @request],:html=>{:multipart => true}) do |f|
+  = f.error_notification
+
+  .form-inputs
+  
+    = f.select( :status,  { "unread" => "unread", "pending" => "pending", "complete" => "complete", "rejected" => "rejected"})
+
+   
+  .form-actions
+    = f.button :submit
+
+
+
