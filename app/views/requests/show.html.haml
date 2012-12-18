@@ -1,28 +1,39 @@
-
-
-%p#notice= notice
-
-%p
-  %b Phone no:
-  = @request.phone_no
-%p
-  %b Request type:
-  = @request.request_type
-%p
-  %b Details of request:
-  = @request.details_of_request
-%p
-  %b Permission:
-  = @request.permission
-%p
-  %b Status:
-  = @request.status
-
-- if @request.status == "complete"  && (current_user.has_role? :user)
-  %p
-    %b Satisfaction:
-    = render "satisfaction"
-  
-  
-- if current_user.has_role? :admin
-  = link_to 'Edit', edit_user_request_path
+%div{:style => "width:1000px; margin:0 auto; height:auto"}
+  .heading
+    %b Request Details
+  %table.table{:align => "left", :border => "0", :cellpadding => "5", :cellspacing => "-1", :width => "100%"}
+    %tr
+      %td{:align => "right", :valign => "middle"}
+        %div{:align => "left"}
+          %b Status:
+      %td{:align => "left", :valign => "middle"}
+        .complete= @request.status
+    - if @request.status == "complete"  && (current_user.has_role? :user)
+      %tr
+        %td{:align => "right", :valign => "middle"}
+          %div{:align => "left"}
+            %b Satisfaction:
+        %td{:align => "left", :valign => "middle"}
+          = render 'satisfaction'
+    %tr
+      %td{:align => "right", :valign => "middle"}
+        %div{:align => "left"}
+          %b Date:
+      %td{:align => "left", :valign => "middle"}= @request.created_at
+    %tr
+      %td{:align => "right", :valign => "middle"}
+        %div{:align => "left"}
+          %b Request Type:
+      %td{:align => "left", :valign => "middle"}= @request.request_type
+    %tr
+      %td{:align => "right", :valign => "middle"}
+        %div{:align => "left"}
+          %b Description:
+      %td{:align => "left", :valign => "middle"}= @request.details_of_request
+    %tr
+      %td{:align => "right", :valign => "middle"}
+        %div{:align => "left"}
+          %b Photo:
+      %td{:align => "left", :valign => "middle"}
+        %img{:src => "image/photo.jpg"}/
+   

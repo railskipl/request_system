@@ -2,15 +2,13 @@
   = f.error_notification
 
   .form-inputs
-    = f.radio_button :satisfaction, "very good"
-    Very good
-    %br
-    = f.radio_button :satisfaction, "good"
-    good
-    %br
+    = f.radio_button :satisfaction, "satisfied"
+    %img{:src => "/assets/1355823139_emotion_smile.png"}/
     = f.radio_button :satisfaction, "not satisfied"
-    not satisfied
+    %img{:src => "/assets/1355823146_emotion_unhappy.png"}/
+    = f.radio_button :satisfaction, "no comments"
+    %img{:src => "/assets/1355823112_emotion_amazing.png"}/
    
   .form-actions
-    = f.button :submit
+    = f.submit "Save"
 

@@ -1,27 +1,26 @@
-%h1 Listing requests
-
-%table
-  %tr
-    %th Date
-    %th Request type
-    %th Details of request
-    %th Status
-
-
+%div{:style => "width:1000px; margin:0 auto; height:auto"}
+  .headding1
+    %b Request History
+  .bar1
+    .txt1
+      %b Date
+    .txt2
+      %b Request Type
+    .txt3
+      %b Description summery
+    .txt4
+      %b Status
   - @requests.each do |request|
     - if request.status == "unread"
-      %tr{:bgcolor => "FFFFCC"}
-        %td= request.created_at.strftime("%d %b. %Y")
-        %td= link_to request.request_type, user_request_path(params[:user_id],request.id) 
-        %td= request.details_of_request
-        %td= request.status
+      .bar2{:style => "background-color: #FFFF99"}
+        .txt1= request.created_at.strftime("%d %b. %Y")
+        .txt2= link_to request.request_type, user_request_path(params[:user_id],request.id)
+        .txt3= truncate(request.details_of_request, :length => 30)
+        .complete1= request.status
     - else
-      %tr
-        %td= request.created_at.strftime("%d %b. %Y")
-        %td= link_to request.request_type, user_request_path(params[:user_id],request.id) 
-        %td= request.details_of_request
-        %td= request.status
-
-%br
-
+      .bar2
+        .txt1= request.created_at.strftime("%d %b. %Y")
+        .txt2= link_to request.request_type, user_request_path(params[:user_id],request.id)
+        .txt3= truncate(request.details_of_request, :length => 30)
+        .complete1= request.status
 = link_to 'New Request', new_user_request_path
