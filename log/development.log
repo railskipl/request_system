@@ -36403,3 +36403,282 @@ Processing by HomeController#index as HTML
   Rendered layouts/_navigation.html.haml (0.9ms)
   Rendered layouts/_messages.html.haml (0.2ms)
 Completed 200 OK in 68ms (Views: 67.4ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-12-18 18:49:34 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (3.1ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (285.1ms)
+  Rendered layouts/_navigation.html.haml (4.3ms)
+  Rendered layouts/_messages.html.haml (1.5ms)
+Completed 200 OK in 563ms (Views: 472.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-18 18:49:41 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bPpC6O7UmJ4aRVKWacN2U46piiZLrlvKaw79/MBXyqY=", "user"=>{"email"=>"ankit@kunalinfotech.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'ankit@kunalinfotech.net' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-12-18 13:13:16.518414', "current_sign_in_at" = '2012-12-18 13:19:41.616090', "sign_in_count" = 25, "updated_at" = '2012-12-18 13:19:41.617161' WHERE "users"."id" = 4[0m
+  [1m[35m (114.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 303ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-18 18:49:41 +0530
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" 
+  Rendered home/index.html.haml within layouts/application (2.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (129.0ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 200ms (Views: 197.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-18 18:49:43 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (46.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.5ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 100ms (Views: 83.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4/requests/10" for 127.0.0.1 at 2012-12-18 18:49:45 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"10"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'user') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered requests/_satisfaction.html.haml (9.0ms)
+  Rendered requests/show.html.haml within layouts/application (20.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.6ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 141ms (Views: 92.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/4/requests/image/photo.jpg" for 127.0.0.1 at 2012-12-18 18:49:46 +0530
+
+ActionController::RoutingError (No route matches [GET] "/users/4/requests/image/photo.jpg"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/4/requests/10" for 127.0.0.1 at 2012-12-18 18:53:08 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "10"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'user') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered requests/_satisfaction.html.haml (2.0ms)
+  Rendered requests/show.html.haml within layouts/application (12.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.6ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 87ms (Views: 82.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/4/requests/image/photo.jpg" for 127.0.0.1 at 2012-12-18 18:53:08 +0530
+
+ActionController::RoutingError (No route matches [GET] "/users/4/requests/image/photo.jpg"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/4/requests/10" for 127.0.0.1 at 2012-12-18 18:54:03 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"10"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'user') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered requests/_satisfaction.html.haml (2.9ms)
+  Rendered requests/show.html.haml within layouts/application (7.4ms)
+Compiled css2.css  (0ms)  (pid 11058)
+Compiled application.css  (8ms)  (pid 11058)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.5ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 154ms (Views: 147.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4/requests/image/photo.jpg" for 127.0.0.1 at 2012-12-18 18:54:03 +0530
+
+ActionController::RoutingError (No route matches [GET] "/users/4/requests/image/photo.jpg"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/4/requests/image/photo.jpg" for 127.0.0.1 at 2012-12-18 18:54:04 +0530
+
+ActionController::RoutingError (No route matches [GET] "/users/4/requests/image/photo.jpg"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/4/requests/10" for 127.0.0.1 at 2012-12-18 18:54:16 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "10"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'user') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered requests/_satisfaction.html.haml (2.0ms)
+  Rendered requests/show.html.haml within layouts/application (13.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.5ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 84ms (Views: 80.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/4/requests/image/photo.jpg" for 127.0.0.1 at 2012-12-18 18:54:16 +0530
+
+ActionController::RoutingError (No route matches [GET] "/users/4/requests/image/photo.jpg"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/users/4/requests/image/photo.jpg" for 127.0.0.1 at 2012-12-18 18:54:17 +0530
+
+ActionController::RoutingError (No route matches [GET] "/users/4/requests/image/photo.jpg"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
