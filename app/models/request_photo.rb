@@ -1,6 +1,6 @@
 class RequestPhoto < ActiveRecord::Base
   attr_accessible :photo
-    has_attached_file :photo ,:styles => { :thumb => "100x100", :medium => "350x350"},
+    has_attached_file :photo ,:styles => { :thumb => "76x73", :medium => "250x250"},
                    :storage => :s3, :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => "public/attachments/request/:id/:style/:basename.:extension",
                     

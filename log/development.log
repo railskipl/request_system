@@ -37236,3 +37236,405 @@ Processing by RequestsController#show as HTML
   Rendered layouts/_navigation.html.haml (3.6ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 81ms (Views: 77.1ms | ActiveRecord: 0.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-19 11:23:20 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (5.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (7.0ms)
+  Rendered layouts/_messages.html.haml (1.7ms)
+Completed 200 OK in 493ms (Views: 226.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/4/requests/new" for 127.0.0.1 at 2012-12-19 11:23:23 +0530
+Processing by RequestsController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequestType Load (0.1ms)[0m  [1mSELECT "request_types".* FROM "request_types" ORDER BY id[0m
+  Rendered requests/_request_photo_fields.html.haml (1.1ms)
+  Rendered requests/_request_photo_fields.html.haml (0.2ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.0. (called from link_to_add_fields at /home/kipl/railsapp/app/app/helpers/application_helper.rb:12)
+  Rendered requests/_form.html.haml (308.6ms)
+  Rendered requests/new.html.haml within layouts/application (310.0ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (4.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 402ms (Views: 376.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/4/requests" for 127.0.0.1 at 2012-12-19 11:24:03 +0530
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5XQmu7GUo3hhw6AW8DVhQAf1HBdP+OuXiSisrh2MwRE=", "request"=>{"phone_no"=>"123456", "request_type"=>"plumbing", "details_of_request"=>"lore lipsunm dsfslore lipsunm dsfslore lipsunm dsfslore lipsunm dsfs", "permission"=>"Yes", "status"=>"unread", "user_id"=>"4", "request_photos_attributes"=>{"0"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0xb345c78 @original_filename="himalaya_add.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"request[request_photos_attributes][0][photo]\"; filename=\"himalaya_add.png\"\r\nContent-Type: image/png\r\n", @tempfile=#<File:/tmp/RackMultipart20121219-5875-j4farw>>}, "1355896421958"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0xb345bd8 @original_filename="property_image4.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"request[request_photos_attributes][1355896421958][photo]\"; filename=\"property_image4.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20121219-5875-1gq24h8>>}, "1355896431914"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0xb3459d0 @original_filename="property_image5.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"request[request_photos_attributes][1355896431914][photo]\"; filename=\"property_image5.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20121219-5875-k69ute>>}}}, "commit"=>"Create Request", "user_id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Command :: identify -format %wx%h '/tmp/himalaya_add20121219-5875-elhjwd.png[0]'
+Command :: identify -format %m '/tmp/himalaya_add20121219-5875-elhjwd.png[0]'
+Command :: identify -format %m '/tmp/himalaya_add20121219-5875-elhjwd.png[0]'
+Command :: convert '/tmp/himalaya_add20121219-5875-elhjwd.png[0]' -auto-orient -resize "100x100" -compose Copy -gravity center -extent 100x100 '/tmp/himalaya_add20121219-5875-elhjwd20121219-5875-th89yw'
+Command :: file -b --mime '/tmp/himalaya_add20121219-5875-elhjwd20121219-5875-th89yw'
+Command :: identify -format %wx%h '/tmp/himalaya_add20121219-5875-elhjwd.png[0]'
+Command :: identify -format %m '/tmp/himalaya_add20121219-5875-elhjwd.png[0]'
+Command :: identify -format %m '/tmp/himalaya_add20121219-5875-elhjwd.png[0]'
+Command :: convert '/tmp/himalaya_add20121219-5875-elhjwd.png[0]' -auto-orient -resize "250x250" -compose Copy -gravity center -extent 350x350 '/tmp/himalaya_add20121219-5875-elhjwd20121219-5875-j9r1sh'
+Command :: file -b --mime '/tmp/himalaya_add20121219-5875-elhjwd20121219-5875-j9r1sh'
+Command :: identify -format %wx%h '/tmp/property_image420121219-5875-1my7t73.jpg[0]'
+Command :: identify -format %m '/tmp/property_image420121219-5875-1my7t73.jpg[0]'
+Command :: identify -format %m '/tmp/property_image420121219-5875-1my7t73.jpg[0]'
+Command :: convert '/tmp/property_image420121219-5875-1my7t73.jpg[0]' -auto-orient -resize "100x100" -compose Copy -gravity center -extent 100x100 '/tmp/property_image420121219-5875-1my7t7320121219-5875-1nut6i9'
+Command :: file -b --mime '/tmp/property_image420121219-5875-1my7t7320121219-5875-1nut6i9'
+Command :: identify -format %wx%h '/tmp/property_image420121219-5875-1my7t73.jpg[0]'
+Command :: identify -format %m '/tmp/property_image420121219-5875-1my7t73.jpg[0]'
+Command :: identify -format %m '/tmp/property_image420121219-5875-1my7t73.jpg[0]'
+Command :: convert '/tmp/property_image420121219-5875-1my7t73.jpg[0]' -auto-orient -resize "250x250" -compose Copy -gravity center -extent 350x350 '/tmp/property_image420121219-5875-1my7t7320121219-5875-1cgg9ud'
+Command :: file -b --mime '/tmp/property_image420121219-5875-1my7t7320121219-5875-1cgg9ud'
+Command :: identify -format %wx%h '/tmp/property_image520121219-5875-2ypzdo.jpg[0]'
+Command :: identify -format %m '/tmp/property_image520121219-5875-2ypzdo.jpg[0]'
+Command :: identify -format %m '/tmp/property_image520121219-5875-2ypzdo.jpg[0]'
+Command :: convert '/tmp/property_image520121219-5875-2ypzdo.jpg[0]' -auto-orient -resize "100x100" -compose Copy -gravity center -extent 100x100 '/tmp/property_image520121219-5875-2ypzdo20121219-5875-d4yml8'
+Command :: file -b --mime '/tmp/property_image520121219-5875-2ypzdo20121219-5875-d4yml8'
+Command :: identify -format %wx%h '/tmp/property_image520121219-5875-2ypzdo.jpg[0]'
+Command :: identify -format %m '/tmp/property_image520121219-5875-2ypzdo.jpg[0]'
+Command :: identify -format %m '/tmp/property_image520121219-5875-2ypzdo.jpg[0]'
+Command :: convert '/tmp/property_image520121219-5875-2ypzdo.jpg[0]' -auto-orient -resize "250x250" -compose Copy -gravity center -extent 350x350 '/tmp/property_image520121219-5875-2ypzdo20121219-5875-crrqpn'
+Command :: file -b --mime '/tmp/property_image520121219-5875-2ypzdo20121219-5875-crrqpn'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.8ms)[0m  INSERT INTO "requests" ("created_at", "details_of_request", "permission", "phone_no", "request_type", "satisfaction", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 19 Dec 2012 05:54:04 UTC +00:00], ["details_of_request", "lore lipsunm dsfslore lipsunm dsfslore lipsunm dsfslore lipsunm dsfs"], ["permission", false], ["phone_no", 123456], ["request_type", "plumbing"], ["satisfaction", nil], ["status", "unread"], ["updated_at", Wed, 19 Dec 2012 05:54:04 UTC +00:00], ["user_id", 4]]
+Binary data inserted for `string` type on column `photo_content_type`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "request_photos" ("created_at", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "request_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 19 Dec 2012 05:54:04 UTC +00:00], ["photo_content_type", "image/png"], ["photo_file_name", "himalaya_add.png"], ["photo_file_size", 105385], ["photo_updated_at", Wed, 19 Dec 2012 05:54:04 UTC +00:00], ["request_id", 22], ["updated_at", Wed, 19 Dec 2012 05:54:04 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving public/attachments/request/13/original/himalaya_add.png
+[AWS S3 200 6.268405 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>105385,:content_type=>"image/png",:data=>Paperclip::UploadedFileAdapter: himalaya_add.png,:key=>"public/attachments/request/13/original/himalaya_add.png")  
+
+[paperclip] saving public/attachments/request/13/thumb/himalaya_add.png
+[AWS S3 200 0.527063 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>18167,:content_type=>"image/png",:data=>Paperclip::FileAdapter: himalaya_add20121219-5875-elhjwd20121219-5875-th89yw,:key=>"public/attachments/request/13/thumb/himalaya_add.png")  
+
+[paperclip] saving public/attachments/request/13/medium/himalaya_add.png
+[AWS S3 200 2.157299 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>91217,:content_type=>"image/png",:data=>Paperclip::FileAdapter: himalaya_add20121219-5875-elhjwd20121219-5875-j9r1sh,:key=>"public/attachments/request/13/medium/himalaya_add.png")  
+
+Binary data inserted for `string` type on column `photo_content_type`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "request_photos" ("created_at", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "request_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 19 Dec 2012 05:54:14 UTC +00:00], ["photo_content_type", "image/jpeg"], ["photo_file_name", "property_image4.jpg"], ["photo_file_size", 7866], ["photo_updated_at", Wed, 19 Dec 2012 05:54:04 UTC +00:00], ["request_id", 22], ["updated_at", Wed, 19 Dec 2012 05:54:14 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving public/attachments/request/14/original/property_image4.jpg
+[AWS S3 200 4.375229 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>7866,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: property_image4.jpg,:key=>"public/attachments/request/14/original/property_image4.jpg")  
+
+[paperclip] saving public/attachments/request/14/thumb/property_image4.jpg
+[AWS S3 200 0.510203 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>3835,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: property_image420121219-5875-1my7t7320121219-5875-1nut6i9,:key=>"public/attachments/request/14/thumb/property_image4.jpg")  
+
+[paperclip] saving public/attachments/request/14/medium/property_image4.jpg
+[AWS S3 200 0.558376 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>14197,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: property_image420121219-5875-1my7t7320121219-5875-1cgg9ud,:key=>"public/attachments/request/14/medium/property_image4.jpg")  
+
+Binary data inserted for `string` type on column `photo_content_type`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "request_photos" ("created_at", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "request_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 19 Dec 2012 05:54:19 UTC +00:00], ["photo_content_type", "image/jpeg"], ["photo_file_name", "property_image5.jpg"], ["photo_file_size", 6854], ["photo_updated_at", Wed, 19 Dec 2012 05:54:04 UTC +00:00], ["request_id", 22], ["updated_at", Wed, 19 Dec 2012 05:54:19 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving public/attachments/request/15/original/property_image5.jpg
+[AWS S3 200 4.315087 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>6854,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: property_image5.jpg,:key=>"public/attachments/request/15/original/property_image5.jpg")  
+
+[paperclip] saving public/attachments/request/15/thumb/property_image5.jpg
+[AWS S3 200 2.112577 1 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>3870,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: property_image520121219-5875-2ypzdo20121219-5875-d4yml8,:key=>"public/attachments/request/15/thumb/property_image5.jpg")  
+
+[paperclip] saving public/attachments/request/15/medium/property_image5.jpg
+[AWS S3 200 0.783789 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>13866,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: property_image520121219-5875-2ypzdo20121219-5875-crrqpn,:key=>"public/attachments/request/15/medium/property_image5.jpg")  
+
+  [1m[35m (109.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/4/requests
+Completed 302 Found in 23053ms (ActiveRecord: 113.8ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-19 11:24:27 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (6.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.5ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 84ms (Views: 80.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/4/requests/22" for 127.0.0.1 at 2012-12-19 11:24:38 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"22"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "22"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mRequestPhoto Load (0.2ms)[0m  SELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 22
+  Rendered requests/show.html.haml within layouts/application (13.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.6ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 133ms (Views: 83.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/4/requests/22" for 127.0.0.1 at 2012-12-19 11:25:12 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"22"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "22"]]
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Request with id=22):
+  app/controllers/requests_controller.rb:21:in `show'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started GET "/users/4/requests/" for 127.0.0.1 at 2012-12-19 11:25:16 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 76ms (Views: 70.8ms | ActiveRecord: 0.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/4/requests/" for 127.0.0.1 at 2012-12-19 11:27:08 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (5.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (7.0ms)
+  Rendered layouts/_messages.html.haml (1.5ms)
+Completed 200 OK in 487ms (Views: 224.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users/4/requests/new" for 127.0.0.1 at 2012-12-19 11:27:09 +0530
+Processing by RequestsController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequestType Load (0.1ms)[0m  [1mSELECT "request_types".* FROM "request_types" ORDER BY id[0m
+  Rendered requests/_request_photo_fields.html.haml (1.1ms)
+  Rendered requests/_request_photo_fields.html.haml (0.2ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.0. (called from link_to_add_fields at /home/kipl/railsapp/app/app/helpers/application_helper.rb:12)
+  Rendered requests/_form.html.haml (306.9ms)
+  Rendered requests/new.html.haml within layouts/application (308.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (4.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 400ms (Views: 376.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users/4/requests" for 127.0.0.1 at 2012-12-19 11:27:39 +0530
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5XQmu7GUo3hhw6AW8DVhQAf1HBdP+OuXiSisrh2MwRE=", "request"=>{"phone_no"=>"123456", "request_type"=>"plumbing", "details_of_request"=>"lorem lipsum lormlds sdlkd skdka asdksamd sakjxsakdcjdsfkcndsaidsakjdfsafcsa cdaskcndaskjlcfnsadnc f", "permission"=>"Yes", "status"=>"unread", "user_id"=>"4", "request_photos_attributes"=>{"0"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0xb9748c4 @original_filename="himalaya_infra.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"request[request_photos_attributes][0][photo]\"; filename=\"himalaya_infra.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20121219-6029-1p3k9uo>>}, "1355896650183"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0xb9747e8 @original_filename="property_image3.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"request[request_photos_attributes][1355896650183][photo]\"; filename=\"property_image3.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20121219-6029-175amhu>>}}}, "commit"=>"Create Request", "user_id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Command :: identify -format %wx%h '/tmp/himalaya_infra20121219-6029-1x6vd25.jpg[0]'
+Command :: identify -format %m '/tmp/himalaya_infra20121219-6029-1x6vd25.jpg[0]'
+Command :: identify -format %m '/tmp/himalaya_infra20121219-6029-1x6vd25.jpg[0]'
+Command :: convert '/tmp/himalaya_infra20121219-6029-1x6vd25.jpg[0]' -auto-orient -resize "76x73" -compose Copy -gravity center -extent 100x100 '/tmp/himalaya_infra20121219-6029-1x6vd2520121219-6029-1pmvdnc'
+Command :: file -b --mime '/tmp/himalaya_infra20121219-6029-1x6vd2520121219-6029-1pmvdnc'
+Command :: identify -format %wx%h '/tmp/himalaya_infra20121219-6029-1x6vd25.jpg[0]'
+Command :: identify -format %m '/tmp/himalaya_infra20121219-6029-1x6vd25.jpg[0]'
+Command :: identify -format %m '/tmp/himalaya_infra20121219-6029-1x6vd25.jpg[0]'
+Command :: convert '/tmp/himalaya_infra20121219-6029-1x6vd25.jpg[0]' -auto-orient -resize "250x250" -compose Copy -gravity center -extent 350x350 '/tmp/himalaya_infra20121219-6029-1x6vd2520121219-6029-1co8g09'
+Command :: file -b --mime '/tmp/himalaya_infra20121219-6029-1x6vd2520121219-6029-1co8g09'
+Command :: identify -format %wx%h '/tmp/property_image320121219-6029-w7busz.jpg[0]'
+Command :: identify -format %m '/tmp/property_image320121219-6029-w7busz.jpg[0]'
+Command :: identify -format %m '/tmp/property_image320121219-6029-w7busz.jpg[0]'
+Command :: convert '/tmp/property_image320121219-6029-w7busz.jpg[0]' -auto-orient -resize "76x73" -compose Copy -gravity center -extent 100x100 '/tmp/property_image320121219-6029-w7busz20121219-6029-utawkl'
+Command :: file -b --mime '/tmp/property_image320121219-6029-w7busz20121219-6029-utawkl'
+Command :: identify -format %wx%h '/tmp/property_image320121219-6029-w7busz.jpg[0]'
+Command :: identify -format %m '/tmp/property_image320121219-6029-w7busz.jpg[0]'
+Command :: identify -format %m '/tmp/property_image320121219-6029-w7busz.jpg[0]'
+Command :: convert '/tmp/property_image320121219-6029-w7busz.jpg[0]' -auto-orient -resize "250x250" -compose Copy -gravity center -extent 350x350 '/tmp/property_image320121219-6029-w7busz20121219-6029-iu0h1j'
+Command :: file -b --mime '/tmp/property_image320121219-6029-w7busz20121219-6029-iu0h1j'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "requests" ("created_at", "details_of_request", "permission", "phone_no", "request_type", "satisfaction", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 19 Dec 2012 05:57:39 UTC +00:00], ["details_of_request", "lorem lipsum lormlds sdlkd skdka asdksamd sakjxsakdcjdsfkcndsaidsakjdfsafcsa cdaskcndaskjlcfnsadnc f"], ["permission", false], ["phone_no", 123456], ["request_type", "plumbing"], ["satisfaction", nil], ["status", "unread"], ["updated_at", Wed, 19 Dec 2012 05:57:39 UTC +00:00], ["user_id", 4]]
+Binary data inserted for `string` type on column `photo_content_type`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "request_photos" ("created_at", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "request_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 19 Dec 2012 05:57:39 UTC +00:00], ["photo_content_type", "image/jpeg"], ["photo_file_name", "himalaya_infra.jpg"], ["photo_file_size", 44143], ["photo_updated_at", Wed, 19 Dec 2012 05:57:39 UTC +00:00], ["request_id", 23], ["updated_at", Wed, 19 Dec 2012 05:57:39 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving public/attachments/request/16/original/himalaya_infra.jpg
+[AWS S3 200 5.513462 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>44143,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: himalaya_infra.jpg,:key=>"public/attachments/request/16/original/himalaya_infra.jpg")  
+
+[paperclip] saving public/attachments/request/16/thumb/himalaya_infra.jpg
+[AWS S3 200 0.523384 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>9713,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: himalaya_infra20121219-6029-1x6vd2520121219-6029-1pmvdnc,:key=>"public/attachments/request/16/thumb/himalaya_infra.jpg")  
+
+[paperclip] saving public/attachments/request/16/medium/himalaya_infra.jpg
+[AWS S3 200 0.900462 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>60442,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: himalaya_infra20121219-6029-1x6vd2520121219-6029-1co8g09,:key=>"public/attachments/request/16/medium/himalaya_infra.jpg")  
+
+Binary data inserted for `string` type on column `photo_content_type`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "request_photos" ("created_at", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "request_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 19 Dec 2012 05:57:47 UTC +00:00], ["photo_content_type", "image/jpeg"], ["photo_file_name", "property_image3.jpg"], ["photo_file_size", 8279], ["photo_updated_at", Wed, 19 Dec 2012 05:57:39 UTC +00:00], ["request_id", 23], ["updated_at", Wed, 19 Dec 2012 05:57:47 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving public/attachments/request/17/original/property_image3.jpg
+[AWS S3 200 4.355856 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>8279,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: property_image3.jpg,:key=>"public/attachments/request/17/original/property_image3.jpg")  
+
+[paperclip] saving public/attachments/request/17/thumb/property_image3.jpg
+[AWS S3 200 0.51355 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>3557,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: property_image320121219-6029-w7busz20121219-6029-utawkl,:key=>"public/attachments/request/17/thumb/property_image3.jpg")  
+
+[paperclip] saving public/attachments/request/17/medium/property_image3.jpg
+[AWS S3 200 0.557509 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>15967,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: property_image320121219-6029-w7busz20121219-6029-iu0h1j,:key=>"public/attachments/request/17/medium/property_image3.jpg")  
+
+  [1m[36m (99.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/4/requests
+Completed 302 Found in 13585ms (ActiveRecord: 102.1ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-19 11:27:53 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4
+  Rendered requests/index.html.haml within layouts/application (6.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.5ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 83ms (Views: 77.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/4/requests/23" for 127.0.0.1 at 2012-12-19 11:28:08 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"23"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "23"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequestPhoto Load (0.2ms)[0m  [1mSELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 23[0m
+  Rendered requests/show.html.haml within layouts/application (12.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 133ms (Views: 82.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-19 11:28:48 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4
+  Rendered requests/index.html.haml within layouts/application (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.5ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 72ms (Views: 68.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4/requests/new" for 127.0.0.1 at 2012-12-19 11:28:55 +0530
+Processing by RequestsController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mRequestType Load (0.2ms)[0m  SELECT "request_types".* FROM "request_types" ORDER BY id
+  Rendered requests/_request_photo_fields.html.haml (0.2ms)
+  Rendered requests/_request_photo_fields.html.haml (0.2ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.0. (called from link_to_add_fields at /home/kipl/railsapp/app/app/helpers/application_helper.rb:12)
+  Rendered requests/_form.html.haml (46.7ms)
+  Rendered requests/new.html.haml within layouts/application (47.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (36.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 121ms (Views: 117.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/4/requests" for 127.0.0.1 at 2012-12-19 11:29:14 +0530
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5XQmu7GUo3hhw6AW8DVhQAf1HBdP+OuXiSisrh2MwRE=", "request"=>{"phone_no"=>"123456", "request_type"=>"plumbing", "details_of_request"=>"lore lipsunm dsfslore lipsunm dsfslore lipsunm dsfslore lipsunm dsfs", "permission"=>"Yes", "status"=>"unread", "user_id"=>"4", "request_photos_attributes"=>{"0"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0x9a428d4 @original_filename="property_image4.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"request[request_photos_attributes][0][photo]\"; filename=\"property_image4.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20121219-6029-zkdpwn>>}, "1355896748879"=>{"photo"=>#<ActionDispatch::Http::UploadedFile:0x9a56e74 @original_filename="himalaya_infra.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"request[request_photos_attributes][1355896748879][photo]\"; filename=\"himalaya_infra.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20121219-6029-1utqwa6>>}}}, "commit"=>"Create Request", "user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Command :: identify -format %wx%h '/tmp/property_image420121219-6029-udad9g.jpg[0]'
+Command :: identify -format %m '/tmp/property_image420121219-6029-udad9g.jpg[0]'
+Command :: identify -format %m '/tmp/property_image420121219-6029-udad9g.jpg[0]'
+Command :: convert '/tmp/property_image420121219-6029-udad9g.jpg[0]' -auto-orient -resize "76x73" -compose Copy -gravity center -extent 100x100 '/tmp/property_image420121219-6029-udad9g20121219-6029-1ie1e5j'
+Command :: file -b --mime '/tmp/property_image420121219-6029-udad9g20121219-6029-1ie1e5j'
+Command :: identify -format %wx%h '/tmp/property_image420121219-6029-udad9g.jpg[0]'
+Command :: identify -format %m '/tmp/property_image420121219-6029-udad9g.jpg[0]'
+Command :: identify -format %m '/tmp/property_image420121219-6029-udad9g.jpg[0]'
+Command :: convert '/tmp/property_image420121219-6029-udad9g.jpg[0]' -auto-orient -resize "250x250" -compose Copy -gravity center -extent 350x350 '/tmp/property_image420121219-6029-udad9g20121219-6029-1myi6io'
+Command :: file -b --mime '/tmp/property_image420121219-6029-udad9g20121219-6029-1myi6io'
+Command :: identify -format %wx%h '/tmp/himalaya_infra20121219-6029-5kxt1.jpg[0]'
+Command :: identify -format %m '/tmp/himalaya_infra20121219-6029-5kxt1.jpg[0]'
+Command :: identify -format %m '/tmp/himalaya_infra20121219-6029-5kxt1.jpg[0]'
+Command :: convert '/tmp/himalaya_infra20121219-6029-5kxt1.jpg[0]' -auto-orient -resize "76x73" -compose Copy -gravity center -extent 100x100 '/tmp/himalaya_infra20121219-6029-5kxt120121219-6029-dwelr'
+Command :: file -b --mime '/tmp/himalaya_infra20121219-6029-5kxt120121219-6029-dwelr'
+Command :: identify -format %wx%h '/tmp/himalaya_infra20121219-6029-5kxt1.jpg[0]'
+Command :: identify -format %m '/tmp/himalaya_infra20121219-6029-5kxt1.jpg[0]'
+Command :: identify -format %m '/tmp/himalaya_infra20121219-6029-5kxt1.jpg[0]'
+Command :: convert '/tmp/himalaya_infra20121219-6029-5kxt1.jpg[0]' -auto-orient -resize "250x250" -compose Copy -gravity center -extent 350x350 '/tmp/himalaya_infra20121219-6029-5kxt120121219-6029-1dbw9ut'
+Command :: file -b --mime '/tmp/himalaya_infra20121219-6029-5kxt120121219-6029-1dbw9ut'
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "requests" ("created_at", "details_of_request", "permission", "phone_no", "request_type", "satisfaction", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 19 Dec 2012 05:59:14 UTC +00:00], ["details_of_request", "lore lipsunm dsfslore lipsunm dsfslore lipsunm dsfslore lipsunm dsfs"], ["permission", false], ["phone_no", 123456], ["request_type", "plumbing"], ["satisfaction", nil], ["status", "unread"], ["updated_at", Wed, 19 Dec 2012 05:59:14 UTC +00:00], ["user_id", 4]]
+Binary data inserted for `string` type on column `photo_content_type`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "request_photos" ("created_at", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "request_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Wed, 19 Dec 2012 05:59:14 UTC +00:00], ["photo_content_type", "image/jpeg"], ["photo_file_name", "property_image4.jpg"], ["photo_file_size", 7866], ["photo_updated_at", Wed, 19 Dec 2012 05:59:14 UTC +00:00], ["request_id", 24], ["updated_at", Wed, 19 Dec 2012 05:59:14 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving public/attachments/request/18/original/property_image4.jpg
+[AWS S3 200 4.599076 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>7866,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: property_image4.jpg,:key=>"public/attachments/request/18/original/property_image4.jpg")  
+
+[paperclip] saving public/attachments/request/18/thumb/property_image4.jpg
+[AWS S3 200 0.524595 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>2831,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: property_image420121219-6029-udad9g20121219-6029-1ie1e5j,:key=>"public/attachments/request/18/thumb/property_image4.jpg")  
+
+[paperclip] saving public/attachments/request/18/medium/property_image4.jpg
+[AWS S3 200 0.593602 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>14197,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: property_image420121219-6029-udad9g20121219-6029-1myi6io,:key=>"public/attachments/request/18/medium/property_image4.jpg")  
+
+Binary data inserted for `string` type on column `photo_content_type`
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "request_photos" ("created_at", "photo_content_type", "photo_file_name", "photo_file_size", "photo_updated_at", "request_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 19 Dec 2012 05:59:20 UTC +00:00], ["photo_content_type", "image/jpeg"], ["photo_file_name", "himalaya_infra.jpg"], ["photo_file_size", 44143], ["photo_updated_at", Wed, 19 Dec 2012 05:59:14 UTC +00:00], ["request_id", 24], ["updated_at", Wed, 19 Dec 2012 05:59:20 UTC +00:00]]
+[paperclip] Saving attachments.
+[paperclip] saving public/attachments/request/19/original/himalaya_infra.jpg
+[AWS S3 200 2.089939 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>44143,:content_type=>"image/jpeg",:data=>Paperclip::UploadedFileAdapter: himalaya_infra.jpg,:key=>"public/attachments/request/19/original/himalaya_infra.jpg")  
+
+[paperclip] saving public/attachments/request/19/thumb/himalaya_infra.jpg
+[AWS S3 200 0.535232 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>9713,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: himalaya_infra20121219-6029-5kxt120121219-6029-dwelr,:key=>"public/attachments/request/19/thumb/himalaya_infra.jpg")  
+
+[paperclip] saving public/attachments/request/19/medium/himalaya_infra.jpg
+[AWS S3 200 0.83221 0 retries] put_object(:acl=>:public_read,:bucket_name=>"request_system_test",:content_length=>60442,:content_type=>"image/jpeg",:data=>Paperclip::FileAdapter: himalaya_infra20121219-6029-5kxt120121219-6029-1dbw9ut,:key=>"public/attachments/request/19/medium/himalaya_infra.jpg")  
+
+  [1m[35m (119.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/4/requests
+Completed 302 Found in 9647ms (ActiveRecord: 121.1ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-19 11:29:24 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (2.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.5ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 84ms (Views: 78.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/4/requests/24" for 127.0.0.1 at 2012-12-19 11:29:27 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"24"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mRequestPhoto Load (0.2ms)[0m  SELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24
+  Rendered requests/show.html.haml within layouts/application (13.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.6ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 90ms (Views: 86.0ms | ActiveRecord: 0.6ms)
