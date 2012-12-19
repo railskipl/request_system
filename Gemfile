@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.7'
-#gem 'sqlite3'
+gem 'sqlite3'
 gem 'paperclip'
 gem 'therubyracer'
 group :production do
@@ -11,6 +11,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
+gem 'aws-s3'
+gem 'aws-sdk'
+
 gem 'jquery-rails'
 gem "haml", ">= 3.1.7"
 gem "haml-rails", ">= 0.3.5", :group => :development

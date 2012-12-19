@@ -35,5 +35,6 @@
         %div{:align => "left"}
           %b Photo:
       %td{:align => "left", :valign => "middle"}
-        %img{:src => "image/photo.jpg"}/
+        - for photo in @request.request_photos
+          = image_tag photo.photo.url(:medium)
    
