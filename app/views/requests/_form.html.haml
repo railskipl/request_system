@@ -5,7 +5,9 @@
     = f.input :phone_no
     = f.label :request_type 
     = f.collection_select :request_type, RequestType.all(:order => "id"), :name,:name
-    = f.input :details_of_request
+    %br
+    = f.label :details_of_request
+    = f.text_area :details_of_request ,:rows => "10", :class => "custom_textarea"
     = f.label :permission 
     = f.radio_button  :permission, "Yes"
     Yes
