@@ -14,7 +14,7 @@
     - if request.status == "unread"
       .bar2{:style => "background-color: #FFFF99"}
         .txt1= request.created_at.strftime("%d %b. %Y")
-        .txt2= link_to request.request_type, user_request_path(params[:user_id],request.id)
+        .txt2= link_to request.request_type, user_request_path(params[:user_id],request.id),:class => "abc"
         .txt3= truncate(request.details_of_request, :length => 30)
         .complete1= request.status
     - else

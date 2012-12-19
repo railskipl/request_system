@@ -1,30 +1,47 @@
-/ Requests show to administrator
-%h1 Listing requests
-
-%table
-  %tr
-    %th Name
-    %th Email
-    %th Phone Number
-    %th Request type
-    %th Status
-
-
+%div{:style => "width:1000px; margin:0 auto; height:auto"}
+  .headding1
+    %b Listing Requests
+  .bar_a
+    .txt_a
+      %b Name
+    .txt_b
+      %b Email
+    .txt_c
+      %b Phone Number
+    .txt_e
+      %b Request Type
+    .txt_d
+      %b Status
   - @requests.each do |request|
     - if request.status == "unread"
-      %tr{:bgcolor => "FFFFCC"}
-        %td= request.user.name
-        %td= request.user.id
-        %td= request.phone_no
-        %td= link_to request.request_type, user_request_path(params[:user_id],request.id) 
-        %td= request.status
+      .bar_b{:style => "background-color:#FFFFCC "}
+        .txt_a= request.user.name
+        .txt_b
+          = request.user.email
+          
+        .txt_c
+          = request.phone_no
+          
+        .txt_x
+          = link_to request.request_type, user_request_path(params[:user_id],request.id)
+          
+        .complete_b
+          = request.status
+          
     - else
-      %tr
-        %td= request.user.name
-        %td= request.user.id
-        %td= request.phone_no
-        %td= link_to request.request_type, user_request_path(params[:user_id],request.id) 
-        %td= request.status
+      .bar_b
+        .txt_a= request.user.name
+        .txt_b
+          = request.user.email
+          
+        .txt_c
+          = request.phone_no
+          
+        .txt_x
+          = link_to request.request_type, user_request_path(params[:user_id],request.id), :class => "abc"
+          
+        .complete_b
+          = request.status
 
-%br
 
+= link_to 'New Request', new_user_request_path

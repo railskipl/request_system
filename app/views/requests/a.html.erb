@@ -1,0 +1,30 @@
+
+
+<div style="width:1000px; margin:0 auto; height:auto">
+
+
+<div class="headding1"><b>Listing Requests </b></div>
+
+<div class="bar_a"><div class="txt_a"><b>Name</b></div>
+<div class="txt_b"><b>Email</b></div>
+<div class="txt_c"><b>Phone Number</b></div><div class="txt_e"><b>Request Type</b></div><div class="txt_d"><b>Status</b></div></div>
+		
+		<% @requests.each do |request| %>
+		<% if request.status == "unread" %>
+        <a href="/request_info"><div class="bar_b" style="background-color:red "><div class="txt_a"><%= request.user.name %></div>
+        <div class="txt_b"><%= request.user.email %></div>
+        <div class="txt_c"><%= request.user.phone_no %> </div>
+     	<div class="txt_x"><%= link_to request.request_type, user_request_path(params[:user_id],request.id) %></div>
+        <div class="complete_b" ><%= request.user.status %></div></div>
+		<% else %>
+		<div class="bar_b"><div class="txt_a"><%= request.user.name %></div>
+        <div class="txt_b"><%= request.user.email %></div>
+        <div class="txt_c"><%= request.user.phone_no %> </div>
+     	<div class="txt_c"><%= link_to request.request_type, user_request_path(params[:user_id],request.id) %> </div>
+        <div class="complete_b" ><%= request.user.status %></div></div>
+		
+		
+
+
+</div>
+</div>

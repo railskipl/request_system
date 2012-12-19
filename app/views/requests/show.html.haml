@@ -37,4 +37,13 @@
       %td{:align => "left", :valign => "middle"}
         - for photo in @request.request_photos
           = image_tag photo.photo.url(:thumb)
+    
+  - if current_user.has_role? :admin
+    %tr
+      %td{:align => "right", :valign => "middle"}
+        %div{:align => "left"}
+          %h3= link_to 'Edit', edit_user_request_path
+      
+
+  
    
