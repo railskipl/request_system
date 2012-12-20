@@ -2,7 +2,8 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :phone_no
+    = f.label :phone_no
+    = f.telephone_field :phone_no
     = f.label :request_type 
     = f.collection_select :request_type, RequestType.all(:order => "id"), :name,:name
     %br
