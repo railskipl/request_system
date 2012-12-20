@@ -2,6 +2,22 @@
   .heading
     %b Request Details
   %table.table{:align => "left", :border => "0", :cellpadding => "5", :cellspacing => "-1", :width => "100%"}
+    - if current_user.has_role? :admin      
+      %tr
+        %td{:align => "right", :valign => "middle"}
+          %div{:align => "left"}
+            %b User Name: 
+        %td{:align => "left", :valign => "middle"}= @request.user.name
+      %tr
+        %td{:align => "right", :valign => "middle"}
+          %div{:align => "left"}
+            %b Phone Number
+        %td{:align => "left", :valign => "middle"}= @request.phone_no
+      %tr
+        %td{:align => "right", :valign => "middle"}
+          %div{:align => "left"}
+            %b Email
+        %td{:align => "left", :valign => "middle"}= @request.user.email
     %tr
       %td{:align => "right", :valign => "middle"}
         %div{:align => "left"}
@@ -42,7 +58,7 @@
     %tr
       %td{:align => "right", :valign => "middle"}
         %div{:align => "left"}
-          %h3= link_to 'Edit', edit_user_request_path
+          %h3= link_to 'Edit Request', edit_user_request_path, :class => "btn"
       
 
   
