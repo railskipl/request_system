@@ -8,7 +8,7 @@
     %br
     = f.label :details_of_request
     = f.text_area :details_of_request ,:rows => "10", :class => "custom_textarea"
-    = f.label :permission 
+    = f.label :permission_to_enter 
     = f.radio_button  :permission, "Yes"
     Yes
     %br
@@ -18,6 +18,7 @@
     = f.hidden_field :user_id ,:value => params[:user_id]
     / nested form for adding photos
     .field
+      = f.label :upload_photo
       = f.fields_for :request_photos do |builder|
         = render "request_photo_fields", :f => builder
       %br/
