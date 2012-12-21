@@ -42819,4 +42819,807 @@ Processing by RequestsController#show as HTML
   Rendered layouts/_navigation.html.haml (4.1ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 93ms (Views: 85.7ms | ActiveRecord: 2.1ms)
+<<<<<<< HEAD
 >>>>>>> aff2723354df12e196fb942f9e4176e0fe45e417
+=======
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-20 11:16:54 +0530
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered home/index.html.haml within layouts/application (3.1ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (80.4ms)
+  Rendered layouts/_messages.html.haml (1.5ms)
+Completed 200 OK in 238ms (Views: 235.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/requests/request_info" for 127.0.0.1 at 2012-12-20 11:17:18 +0530
+Processing by RequestsController#request_info as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  Rendered requests/request_info.html.haml within layouts/application (13.4ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (4.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 60ms (Views: 39.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/requests/25" for 127.0.0.1 at 2012-12-20 11:17:20 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "25"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 25
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequestPhoto Load (0.1ms)[0m  SELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 25
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered requests/show.html.haml within layouts/application (72.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (4.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 148ms (Views: 140.1ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2012-12-20 11:37:17 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yz2ch67QvU10/p4yZBgt/ETIphElDSlksqhjM9GFo6E="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-20 11:37:17 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.haml within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-12-20 11:37:19 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (2.9ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (181.3ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 208ms (Views: 206.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-20 11:37:30 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sW5U1yeecKn/7viGhMtr1by9LgDuBQpp2aAlSfI9XGs=", "user"=>{"email"=>"user2@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'user2@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-12-20 05:39:04.496187', "current_sign_in_at" = '2012-12-20 06:07:30.203057', "sign_in_count" = 12, "updated_at" = '2012-12-20 06:07:30.203787' WHERE "users"."id" = 2
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-20 11:37:30 +0530
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.haml within layouts/application (1.3ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (4.6ms)
+  Rendered layouts/_messages.html.haml (0.4ms)
+Completed 200 OK in 76ms (Views: 74.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/requests" for 127.0.0.1 at 2012-12-20 11:37:32 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 2
+  Rendered requests/index.html.haml within layouts/application (6.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (4.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 83ms (Views: 77.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/requests/new" for 127.0.0.1 at 2012-12-20 11:37:34 +0530
+Processing by RequestsController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mRequestType Load (0.1ms)[0m  SELECT "request_types".* FROM "request_types" ORDER BY id
+  Rendered requests/_request_photo_fields.html.haml (1.4ms)
+  Rendered requests/_request_photo_fields.html.haml (0.2ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.0. (called from link_to_add_fields at /users/anupmahabudhe/src/request_system/app/helpers/application_helper.rb:12)
+  Rendered requests/_form.html.haml (62.3ms)
+  Rendered requests/new.html.haml within layouts/application (64.2ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (4.4ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 137ms (Views: 134.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/2/requests" for 127.0.0.1 at 2012-12-20 11:37:46 +0530
+Processing by RequestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sW5U1yeecKn/7viGhMtr1by9LgDuBQpp2aAlSfI9XGs=", "request"=>{"phone_no"=>"asdsadas", "request_type"=>"plumbing", "details_of_request"=>"asdsa", "permission"=>"Yes", "status"=>"unread", "user_id"=>"2"}, "commit"=>"Create Request", "user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "requests" ("created_at", "details_of_request", "permission", "phone_no", "request_type", "satisfaction", "status", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 20 Dec 2012 06:07:46 UTC +00:00], ["details_of_request", "asdsa"], ["permission", false], ["phone_no", 0], ["request_type", "plumbing"], ["satisfaction", nil], ["status", "unread"], ["updated_at", Thu, 20 Dec 2012 06:07:46 UTC +00:00], ["user_id", 2]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2/requests
+Completed 302 Found in 40ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/2/requests" for 127.0.0.1 at 2012-12-20 11:37:46 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 2[0m
+  Rendered requests/index.html.haml within layouts/application (1.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.9ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 80ms (Views: 76.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/2/requests/new" for 127.0.0.1 at 2012-12-20 11:38:20 +0530
+Processing by RequestsController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+  [1m[36mRequestType Load (0.2ms)[0m  [1mSELECT "request_types".* FROM "request_types" ORDER BY id[0m
+  Rendered requests/_request_photo_fields.html.haml (0.2ms)
+  Rendered requests/_request_photo_fields.html.haml (0.2ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.0. (called from link_to_add_fields at /users/anupmahabudhe/src/request_system/app/helpers/application_helper.rb:12)
+  Rendered requests/_form.html.haml (45.6ms)
+  Rendered requests/new.html.haml within layouts/application (46.5ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 2 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (4.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 121ms (Views: 118.4ms | ActiveRecord: 0.6ms)
+>>>>>>> 4cc21d2fcbe0befaefa539675c24b75fb5fef5d6
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-21 12:00:45 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.haml within layouts/application (3.1ms)
+Compiled bootstrap_and_overrides.css  (1684ms)  (pid 11684)
+Compiled application.css  (57ms)  (pid 11684)
+Compiled application.js  (345ms)  (pid 11684)
+  Rendered layouts/_navigation.html.haml (34.9ms)
+  Rendered layouts/_messages.html.haml (1.5ms)
+Completed 200 OK in 2877ms (Views: 2727.4ms | ActiveRecord: 29.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-12-21 12:00:50 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (3.1ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (568.0ms)
+  Rendered layouts/_navigation.html.haml (0.9ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 648ms (Views: 646.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-21 12:01:00 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tl4gBUHbaG2hPB7gOM5gx35ip9kPysGPaggaWONAowU=", "user"=>{"email"=>"user@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-12-19 06:31:07.208742', "current_sign_in_at" = '2012-12-21 06:31:01.114096', "sign_in_count" = 21, "updated_at" = '2012-12-21 06:31:01.115137' WHERE "users"."id" = 1
+  [1m[36m (107.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 374ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-21 12:01:01 +0530
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.haml within layouts/application (1.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (212.1ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 269ms (Views: 267.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1/requests/request_info" for 127.0.0.1 at 2012-12-21 12:01:03 +0530
+Processing by RequestsController#request_info as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  Rendered requests/request_info.html.haml within layouts/application (16.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (4.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 88ms (Views: 78.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:01:05 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "24"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mSQL (87.9ms)[0m  UPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequestPhoto Load (0.1ms)[0m  SELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered requests/show.html.haml within layouts/application (61.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 220ms (Views: 124.0ms | ActiveRecord: 89.2ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:01:10 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mSQL (80.7ms)[0m  [1mUPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequestPhoto Load (0.1ms)[0m  [1mSELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered requests/show.html.haml within layouts/application (8.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 126ms (Views: 37.3ms | ActiveRecord: 81.7ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:01:36 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "24"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mSQL (100.9ms)[0m  UPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequestPhoto Load (0.2ms)[0m  SELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24
+  Rendered requests/show.html.haml within layouts/application (22.2ms)
+Completed 500 Internal Server Error in 135ms
+
+ActionView::Template::Error (undefined method `symbolize_keys!' for #<String:0xc5fa094>):
+    52:           %b Photo:
+    53:       %td{:align => "left", :valign => "middle"}
+    54:         - for photo in @request.request_photos
+    55:           =link_to  image_tag photo.photo.url(:thumb) ,photo.photo.url(:thumb)
+    56:     
+    57:   - if current_user.has_role? :admin
+    58:     %tr
+  app/views/requests/show.html.haml:55:in `block in _app_views_requests_show_html_haml___21620168_104772370'
+  app/views/requests/show.html.haml:54:in `_app_views_requests_show_html_haml___21620168_104772370'
+  app/controllers/requests_controller.rb:26:in `show'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.4ms)
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:01:40 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "24"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mSQL (87.5ms)[0m  UPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+ERROR: compiling _app_views_requests_show_html_haml___21620168_101663910 RAISED /home/kipl/railsapp/app/app/views/requests/show.html.haml:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+...g photo.photo.url(:thumb) photo.photo.url(:thumb)
+...                               ^
+Function body:           def _app_views_requests_show_html_haml___21620168_101663910(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "requests/show";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("<div style='width:1000px; margin:0 auto; height:auto'>\n  <div class='heading'>\n    <b>Request Details</b>\n  </div>\n  <table align='left' border='0' cellpadding='5' cellspacing='-1' class='table' width='100%'>\n", 2, false);
+
+
+
+ if current_user.has_role? :admin
+_hamlout.push_text("    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>User Name:</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>#{_hamlout.adjust_tabs(2); 
+
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@request.user.name
+));}</td>\n    </tr>\n    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>Phone Number</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>#{_hamlout.adjust_tabs(1); 
+
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@request.phone_no
+));}</td>\n    </tr>\n    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>Email</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>#{_hamlout.adjust_tabs(1); 
+
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@request.user.email
+));}</td>\n    </tr>\n", -1, false);end
+_hamlout.push_text("    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>Status:</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>\n        <div class='complete'>#{_hamlout.adjust_tabs(3); 
+
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@request.status
+));}</div>\n      </td>\n    </tr>\n", -2, false); if @request.status == "complete"  && (current_user.has_role? :user)
+_hamlout.push_text("    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>Satisfaction:</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>\n        #{_hamlout.adjust_tabs(2); 
+
+
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( render 'satisfaction'
+));}\n      </td>\n    </tr>\n", -2, false);end
+_hamlout.push_text("    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>Date:</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>#{_hamlout.adjust_tabs(2); 
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@request.created_at
+));}</td>\n    </tr>\n    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>Request Type:</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>#{_hamlout.adjust_tabs(1); 
+
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@request.request_type
+));}</td>\n    </tr>\n    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>Description:</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>#{_hamlout.adjust_tabs(1); 
+
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((@request.details_of_request
+));}</td>\n    </tr>\n    <tr>\n      <td align='right' valign='middle'>\n        <div align='left'>\n          <b>Photo:</b>\n        </div>\n      </td>\n      <td align='left' valign='middle'>\n", 1, false);
+
+
+
+
+ for photo in @request.request_photos
+_hamlout.push_text("        #{_hamlout.format_script_false_false_false_true_false_true_false((link_to  image_tag photo.photo.url(:thumb) photo.photo.url(:thumb)
+));}\n", 0, false);end
+_hamlout.push_text("      </td>\n    </tr>\n  </table>\n", -3, false); if current_user.has_role? :admin
+_hamlout.push_text("  <tr>\n    <td align='right' valign='middle'>\n      <div align='left'>\n        <h3>#{_hamlout.adjust_tabs(4); 
+
+
+_hamlout.format_script_false_true_false_true_false_true_false((link_to 'Edit Request', edit_user_request_path, :class => "btn"
+));}</h3>\n      </div>\n    </td>\n  </tr>\n", -3, false);end
+_hamlout.push_text("</div>\n", -1, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper if @haml_buffer;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/template.rb:297:in `module_eval'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/template.rb:297:in `compile'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/template.rb:232:in `compile!'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/template.rb:144:in `block in render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/notifications.rb:125:in `instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/template.rb:143:in `render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/abstract_controller/rendering.rb:88:in `render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/benchmark.rb:310:in `realtime'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activerecord-3.2.7/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/mime_responds.rb:196:in `respond_to'
+/home/kipl/railsapp/app/app/controllers/requests_controller.rb:26:in `show'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/abstract_controller/base.rb:167:in `process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:425:in `_run__285973772__process_action__962621368__callbacks'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/notifications.rb:123:in `instrument'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activerecord-3.2.7/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/abstract_controller/base.rb:121:in `process'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/abstract_controller/rendering.rb:45:in `process'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal.rb:203:in `dispatch'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_controller/metal.rb:246:in `block in action'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/routing/route_set.rb:600:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/warden-1.2.1/lib/warden/manager.rb:35:in `block in call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/warden-1.2.1/lib/warden/manager.rb:34:in `catch'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/warden-1.2.1/lib/warden/manager.rb:34:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/etag.rb:23:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/conditionalget.rb:25:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:205:in `context'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/session/abstract/id.rb:200:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/cookies.rb:338:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activerecord-3.2.7/lib/active_record/query_cache.rb:64:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activerecord-3.2.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:405:in `_run__791960797__call__950842431__callbacks'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/railties-3.2.7/lib/rails/rack/logger.rb:26:in `call_app'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/railties-3.2.7/lib/rails/rack/logger.rb:16:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/quiet_assets-1.0.1/lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/activesupport-3.2.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/static.rb:62:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/railties-3.2.7/lib/rails/engine.rb:479:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/railties-3.2.7/lib/rails/application.rb:220:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/railties-3.2.7/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+/home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/home/kipl/.rvm/rubies/ruby-1.9.2-p318/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+  Rendered requests/show.html.haml within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 114ms
+
+ActionView::Template::Error (/home/kipl/railsapp/app/app/views/requests/show.html.haml:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+...g photo.photo.url(:thumb) photo.photo.url(:thumb)
+...                               ^):
+    52:           %b Photo:
+    53:       %td{:align => "left", :valign => "middle"}
+    54:         - for photo in @request.request_photos
+    55:           =link_to  image_tag photo.photo.url(:thumb) photo.photo.url(:thumb)
+    56:     
+    57:   - if current_user.has_role? :admin
+    58:     %tr
+  app/controllers/requests_controller.rb:26:in `show'
+
+
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.3ms)
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /home/kipl/.rvm/gems/ruby-1.9.2-p318/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.9ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:01:45 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "24"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mSQL (95.5ms)[0m  UPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequestPhoto Load (0.2ms)[0m  SELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered requests/show.html.haml within layouts/application (58.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (4.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 195ms (Views: 89.6ms | ActiveRecord: 96.6ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:04:00 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mSQL (105.0ms)[0m  [1mUPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequestPhoto Load (0.2ms)[0m  [1mSELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered requests/show.html.haml within layouts/application (18.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 195ms (Views: 81.3ms | ActiveRecord: 106.1ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:04:11 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "24"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mSQL (71.1ms)[0m  UPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequestPhoto Load (0.2ms)[0m  SELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered requests/show.html.haml within layouts/application (19.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.7ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 128ms (Views: 49.3ms | ActiveRecord: 72.1ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:04:20 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mSQL (80.1ms)[0m  [1mUPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequestPhoto Load (0.2ms)[0m  [1mSELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered requests/show.html.haml within layouts/application (21.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 173ms (Views: 85.0ms | ActiveRecord: 81.1ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:04:54 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1  [["id", "24"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mSQL (106.6ms)[0m  UPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequestPhoto Load (0.2ms)[0m  SELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered requests/show.html.haml within layouts/application (23.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 167ms (Views: 52.8ms | ActiveRecord: 107.6ms)
+
+
+Started GET "/users/1/requests/24" for 127.0.0.1 at 2012-12-21 12:05:29 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"24"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mSQL (122.6ms)[0m  [1mUPDATE "requests" SET "status" = 'pending' WHERE "requests"."id" = 24[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequestPhoto Load (0.2ms)[0m  [1mSELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered requests/show.html.haml within layouts/application (20.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 215ms (Views: 84.5ms | ActiveRecord: 123.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2012-12-21 12:05:51 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Tl4gBUHbaG2hPB7gOM5gx35ip9kPysGPaggaWONAowU="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-21 12:05:51 +0530
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered home/index.html.haml within layouts/application (1.1ms)
+  Rendered layouts/_navigation.html.haml (0.8ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-12-21 12:05:52 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (8.1ms)
+  Rendered layouts/_navigation.html.haml (0.9ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 69ms (Views: 68.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-21 12:05:56 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kvvg8MQMlCXF2vLKi8Ue8Viufj77s6foO4R2OtvlLOY=", "user"=>{"email"=>"ankit@kunalinfotech.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'ankit@kunalinfotech.net' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-12-20 04:35:20.642621', "current_sign_in_at" = '2012-12-21 06:35:56.216140', "sign_in_count" = 33, "updated_at" = '2012-12-21 06:35:56.216758' WHERE "users"."id" = 4[0m
+  [1m[35m (100.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 242ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-21 12:05:56 +0530
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered home/index.html.haml within layouts/application (1.7ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (4.0ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 32ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-21 12:05:57 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (30.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.6ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 108ms (Views: 103.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4/requests/24" for 127.0.0.1 at 2012-12-21 12:05:59 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"24"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequestPhoto Load (0.1ms)[0m  [1mSELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered requests/show.html.haml within layouts/application (8.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.6ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 41ms (Views: 37.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2012-12-21 12:06:08 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Kvvg8MQMlCXF2vLKi8Ue8Viufj77s6foO4R2OtvlLOY="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-21 12:06:08 +0530
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered home/index.html.haml within layouts/application (1.2ms)
+  Rendered layouts/_navigation.html.haml (0.9ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 64ms (Views: 62.5ms | ActiveRecord: 0.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-12-21 12:07:05 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (3.0ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (287.5ms)
+  Rendered layouts/_navigation.html.haml (4.2ms)
+  Rendered layouts/_messages.html.haml (1.4ms)
+Completed 200 OK in 564ms (Views: 472.3ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-21 12:07:11 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tDnMZET9O4bugyWPAa+FN4hWbKFQqmRWad2KCMWnEEE=", "user"=>{"email"=>"ankit@kunalinfotech.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'ankit@kunalinfotech.net' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-12-21 06:35:56.216140', "current_sign_in_at" = '2012-12-21 06:37:11.753993', "sign_in_count" = 34, "updated_at" = '2012-12-21 06:37:11.755025' WHERE "users"."id" = 4[0m
+  [1m[35m (112.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 302ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-21 12:07:11 +0530
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered home/index.html.haml within layouts/application (2.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (132.4ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 169ms (Views: 167.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-21 12:07:13 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (11.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (3.4ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 126ms (Views: 77.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/4/requests/24" for 127.0.0.1 at 2012-12-21 12:07:15 +0530
+Processing by RequestsController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"24"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequest Load (0.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequestPhoto Load (0.1ms)[0m  [1mSELECT "request_photos".* FROM "request_photos" WHERE "request_photos"."request_id" = 24[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered requests/show.html.haml within layouts/application (63.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (3.5ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 111ms (Views: 99.7ms | ActiveRecord: 0.9ms)

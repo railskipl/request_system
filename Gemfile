@@ -3,6 +3,8 @@ gem 'rails', '3.2.7'
 #gem 'sqlite3'
 gem 'paperclip'
 gem 'therubyracer'
+
+
 group :production do
   gem 'pg'
 end

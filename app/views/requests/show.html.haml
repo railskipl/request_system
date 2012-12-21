@@ -52,7 +52,7 @@
           %b Photo:
       %td{:align => "left", :valign => "middle"}
         - for photo in @request.request_photos
-          = image_tag photo.photo.url(:thumb)
+          =link_to  image_tag(photo.photo.url(:thumb)), "#{photo.photo.url(:medium)}", :target => "_blank"
     
   - if current_user.has_role? :admin
     %tr
