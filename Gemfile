@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.7'
-#em 'sqlite3'
+gem 'sqlite3'
 gem 'paperclip'
 gem 'therubyracer'
 
