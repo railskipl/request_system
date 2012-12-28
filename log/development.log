@@ -43927,3 +43927,248 @@ Processing by RequestsController#show as HTML
   Rendered layouts/_navigation.html.haml (3.5ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 82ms (Views: 78.1ms | ActiveRecord: 0.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 14:22:07 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.haml within layouts/application (4.5ms)
+Compiled bootstrap_and_overrides.css  (3507ms)  (pid 14801)
+Compiled application.css  (26ms)  (pid 14801)
+Compiled jquery.js  (43ms)  (pid 14801)
+Compiled jquery_ujs.js  (0ms)  (pid 14801)
+Compiled bootstrap-transition.js  (0ms)  (pid 14801)
+Compiled bootstrap-affix.js  (0ms)  (pid 14801)
+Compiled bootstrap-alert.js  (0ms)  (pid 14801)
+Compiled bootstrap-button.js  (0ms)  (pid 14801)
+Compiled bootstrap-carousel.js  (0ms)  (pid 14801)
+Compiled bootstrap-collapse.js  (0ms)  (pid 14801)
+Compiled bootstrap-dropdown.js  (0ms)  (pid 14801)
+Compiled bootstrap-modal.js  (0ms)  (pid 14801)
+Compiled bootstrap-scrollspy.js  (0ms)  (pid 14801)
+Compiled bootstrap-tab.js  (0ms)  (pid 14801)
+Compiled bootstrap-tooltip.js  (0ms)  (pid 14801)
+Compiled bootstrap-popover.js  (0ms)  (pid 14801)
+Compiled bootstrap-typeahead.js  (0ms)  (pid 14801)
+Compiled bootstrap.js  (355ms)  (pid 14801)
+Compiled application.js  (992ms)  (pid 14801)
+  Rendered layouts/_navigation.html.haml (6.6ms)
+  Rendered layouts/_messages.html.haml (2.1ms)
+Completed 200 OK in 5419ms (Views: 5247.1ms | ActiveRecord: 26.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-12-28 14:22:42 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (5.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (470.0ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 552ms (Views: 550.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-28 14:22:59 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oG8Sye/PKQsFUztWRUu9VS3WT+yPvuDOZYlZ3mQtfqI=", "user"=>{"email"=>"user@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'user@example.com' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-12-21 06:31:01.114096', "current_sign_in_at" = '2012-12-28 08:52:59.559093', "sign_in_count" = 22, "updated_at" = '2012-12-28 08:52:59.561027' WHERE "users"."id" = 1
+  [1m[36m (132.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 593ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 14:22:59 +0530
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.haml within layouts/application (1.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (186.6ms)
+  Rendered layouts/_messages.html.haml (0.4ms)
+Completed 200 OK in 263ms (Views: 261.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1/requests/request_info" for 127.0.0.1 at 2012-12-28 14:23:04 +0530
+Processing by RequestsController#request_info as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  Rendered requests/request_info.html.haml within layouts/application (19.5ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (5.9ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 139ms (Views: 124.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1/requests/request_info" for 127.0.0.1 at 2012-12-28 14:24:21 +0530
+Processing by RequestsController#request_info as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" ORDER BY created_at desc[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  Rendered requests/request_info.html.haml within layouts/application (4.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (15.1ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 153ms (Views: 98.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1/requests/request_info" for 127.0.0.1 at 2012-12-28 14:24:32 +0530
+Processing by RequestsController#request_info as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  Rendered requests/request_info.html.haml within layouts/application (4.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (15.1ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 157ms (Views: 100.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/1/requests/request_info" for 127.0.0.1 at 2012-12-28 14:24:39 +0530
+Processing by RequestsController#request_info as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" ORDER BY created_at desc[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  Rendered requests/request_info.html.haml within layouts/application (4.5ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (15.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 154ms (Views: 56.0ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2012-12-28 14:24:43 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oG8Sye/PKQsFUztWRUu9VS3WT+yPvuDOZYlZ3mQtfqI="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 14:24:43 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.haml within layouts/application (2.5ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.4ms)
+Completed 200 OK in 92ms (Views: 90.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-12-28 14:24:45 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (11.0ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-12-28 14:24:52 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ifux+5lvtSPlw2UDL/7W6L+eZK7gVgDC+aL2NFBcwW8=", "user"=>{"email"=>"ankit@kunalinfotech.net", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'ankit@kunalinfotech.net' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-12-24 04:30:30.321142', "current_sign_in_at" = '2012-12-28 08:54:52.434935', "sign_in_count" = 36, "updated_at" = '2012-12-28 08:54:52.435828' WHERE "users"."id" = 4
+  [1m[36m (98.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 455ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-12-28 14:24:52 +0530
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered home/index.html.haml within layouts/application (1.6ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (48.5ms)
+  Rendered layouts/_messages.html.haml (0.4ms)
+Completed 200 OK in 88ms (Views: 86.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-28 14:24:53 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequest Load (0.2ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4
+  Rendered requests/index.html.haml within layouts/application (22.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (5.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 136ms (Views: 84.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-28 14:25:15 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4[0m
+  Rendered requests/index.html.haml within layouts/application (2.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (5.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 155ms (Views: 44.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-28 14:25:18 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mRequest Load (0.1ms)[0m  SELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4
+  Rendered requests/index.html.haml within layouts/application (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered layouts/_navigation.html.haml (5.2ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 98ms (Views: 91.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/4/requests" for 127.0.0.1 at 2012-12-28 14:25:39 +0530
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mRequest Load (0.1ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = 4 ORDER BY created_at desc[0m
+  Rendered requests/index.html.haml within layouts/application (2.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (5.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 153ms (Views: 87.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/4/requests/new" for 127.0.0.1 at 2012-12-28 14:25:43 +0530
+Processing by RequestsController#new as HTML
+  Parameters: {"user_id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1
+  [1m[36mRequestType Load (0.2ms)[0m  [1mSELECT "request_types".* FROM "request_types" ORDER BY id[0m
+  Rendered requests/_request_photo_fields.html.haml (1.6ms)
+  Rendered requests/_request_photo_fields.html.haml (0.3ms)
+DEPRECATION WARNING: link_to_function is deprecated and will be removed from Rails 4.0. (called from link_to_add_fields at /home/kipl/railsapp/app/app/helpers/application_helper.rb:12)
+  Rendered requests/_form.html.haml (53.8ms)
+  Rendered requests/new.html.haml within layouts/application (57.2ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 4 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m
+  Rendered layouts/_navigation.html.haml (5.7ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 233ms (Views: 162.3ms | ActiveRecord: 1.4ms)

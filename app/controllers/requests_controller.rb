@@ -5,9 +5,9 @@ class RequestsController < ApplicationController
   # GET /requests.json
   def index
     if current_user.has_role? :admin
-    @requests =  Request.find(:all)
+    @requests =  Request.find(:all,:order=> 'created_at desc')
     else
-    @requests =  current_user.requests.find(:all)
+    @requests =  current_user.requests.find(:all,:order=> 'created_at desc')
     end
     respond_to do |format|
       format.html # index.html.erb
@@ -110,7 +110,7 @@ class RequestsController < ApplicationController
   
   #method for displaying request to admin
   def request_info
-    @requests =  Request.find(:all)
+    @requests =  Request.find(:all,:order=> 'created_at desc')
   end
   
 end
