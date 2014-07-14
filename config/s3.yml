@@ -1,15 +1,15 @@
 common: &common
-    access_key_id: AKIAIWWQF5REKTC4ZYGQ
-    secret_access_key: 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
+    access_key_id: 
+    secret_access_key: 
 
 development:
     <<: *common
-    bucket: request_system_test
+    bucket: 
 
 test:
     <<: *common
-    bucket: request_system_test
+    bucket: 
 
 production:
     <<: *common
-    bucket: request_system_test
+    bucket: 
